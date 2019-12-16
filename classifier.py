@@ -31,12 +31,10 @@ def model_checker(vectorizer,classifier,sampling_method):
     
     trainTweet,testTweet,trainLabel,testLabel = train_test_split(df,sampling_method)
     
-    #vectorizer = vectorizer.fit_transform(trainLabel.values.astype('U'))
     pipeline = Pipeline([('vectorizer',vectorizer),
                                ('classifier',classifier)])
-    #vectorizer = vectorizer.fit_transform(trainTweet.apply(lambda x: np.str_(x)))
     t0 = time() 
-    sentiment_fit = classifier.fit(trainTweet,trainLabel)  #trainTweet
+    sentiment_fit = classifier.fit(trainTweet,trainLabel)  
     y_pred = sentiment_fit.predict(testTweet)
     train_test_time = time() - t0
     
