@@ -1,3 +1,6 @@
+from sklearn.utils import resample
+import pandas as pd
+
 def OverSampling(strat_train_set):
     df_majority = strat_train_set[strat_train_set['label'] == 0]
     df_minority = strat_train_set[strat_train_set['label'] == 1]
