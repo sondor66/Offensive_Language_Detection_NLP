@@ -82,29 +82,29 @@ def main():
 	SVM = svm.SVC(kernel = 'linear', probability = True, random_state = 100)
 
 	
-	model_checker(df,word_cnt,lr,'None') #Accuracy:76.86%  Train-Test-Split-Time:1.45s
-	model_checker(df,word_cnt,lr,'Oversampling') #75.72% 0.75s
+	model_checker(df,word_cnt,lr,'None') 
+	model_checker(df,word_cnt,lr,'Oversampling') 
 
-	model_checker(df,TFIDF,lr,'None') #77.09% 0.78s
-	model_checker(df,TFIDF,lr,'Oversampling') #75.3% 1.35s
+	model_checker(df,TFIDF,lr,'None') 
+	model_checker(df,TFIDF,lr,'Oversampling') 
 
-	model_checker(df,word_cnt,RF,'None') #75.19 4.12s
-	model_checker(df,word_cnt,RF,'Oversampling') #74.24% 3.02s
+	model_checker(df,word_cnt,RF,'None')
+	model_checker(df,word_cnt,RF,'Oversampling') 
 
-	model_checker(df,TFIDF,RF,'None') #75.87% 2.46s
-	model_checker(df,TFIDF,RF,'Oversampling') #74.81 2.66s
+	model_checker(df,TFIDF,RF,'None') 
+	model_checker(df,TFIDF,RF,'Oversampling') 
 
-	model_checker(df,word_cnt,NB,'None') #75.42 0.32s
-	model_checker(df,word_cnt,NB,'Oversampling') #70.60% 0.35s
+	model_checker(df,word_cnt,NB,'None') 
+	model_checker(df,word_cnt,NB,'Oversampling') 
 
-	model_checker(df,TFIDF,NB,'None') #73.07% 0.31s
-	model_checker(df,TFIDF,NB,'Oversampling') #70.68% 0.37s
+	model_checker(df,TFIDF,NB,'None') 
+	model_checker(df,TFIDF,NB,'Oversampling') 
 
-	model_checker(df,word_cnt,SVM,'None') #74.85% 86.87s
-	model_checker(df,word_cnt,SVM,'Oversampling') #74.73% 156.54s
+	model_checker(df,word_cnt,SVM,'None') 
+	model_checker(df,word_cnt,SVM,'Oversampling') 
 
-	model_checker(df,TFIDF,SVM,'None') #77.01% 76.67s
-	model_checker(df,TFIDF,SVM,'Oversampling') #73.18% 137.49s
+	model_checker(df,TFIDF,SVM,'None') 
+	model_checker(df,TFIDF,SVM,'Oversampling') 
 	
 	#https://nlp.stanford.edu/projects/glove/
 	
@@ -116,9 +116,9 @@ def main():
 	count_out = 0     # Number of words are not in Glove pretrained data
 	out_words_list = []    # A list of words that are not found in Glove pretrained data
 
-	Word2Vec_Model(df,lr,'None') #74.24% 5.19s
-	Word2Vec_Model(df,RF,'None') #71.62% 6.77s
-	Word2Vec_Model(df,SVM,'None') #74.20% 216.76s
+	Word2Vec_Model(df,lr,'None') 
+	Word2Vec_Model(df,RF,'None') 
+	Word2Vec_Model(df,SVM,'None') 
 
 if __name__ == '__main__':
 	main()
